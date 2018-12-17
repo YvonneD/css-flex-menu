@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Amatic SC', cursive;
+	background: #555658;
+}
+.container{
+	position: relative;
+	height: 100vh;
+	display: flex;
+}
+.screen{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: all 2s;
+	flex-grow: 1;
+}
+.screen:nth-child(1){
+	background: #f9ecec;
+}
+.screen:nth-child(2){
+	background: #f0d9da;
+}
+.screen:nth-child(3){
+	background: #ecf2f9;
+}
+.screen:nth-child(1) .content{
+	background: #f9ecec;
+}
+.screen:nth-child(2) .content{
+	background: #f0d9da;
+}
+.screen:nth-child(3) .content{
+	background: #ecf2f9;
+}
+.screen:hover{
+	flex-grow: 5;
+}
+.card{
+	max-width: 300px;
+	text-align: center;
+	transition: 0.5s;
+	font-size:3em;
+}
+.imgBox{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+	box-shadow: 2px 4px 15px ;
+}
+.imgBox img{
+	max-width: 100%;
+}
+.card a{
+	text-decoration: none;
+	padding: 10px 20px;
+	background: #c8d9eb;
+	color: #fff;
+}
+.content{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 100px;
+	background: #fff;
+	transition: 0.5s;
+	visibility: hidden;
+	opacity: 0;
+}
+.content .popin{
+    transition: 2s;
+}
+.content .popin img{
+	max-width: 5em;
+}
+.content .list li{
+   list-style: none;
+   text-transform: uppercase;
+}
+.content .list li:hover{
+	text-decoration: underline;
+	cursor:pointer;
+}
+.container .screen .card a:hover~.content,.content:hover{
+	opacity: 1;
+	visibility: visible;
+}
